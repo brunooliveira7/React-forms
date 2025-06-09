@@ -10,7 +10,15 @@ type FormData = {
   description: string;
 };
 
-const schema = yup.object().shape({});
+const schema = yup.object({
+  name: yup.string().required("Nome é obrigatório"),
+  date: yup.string().required("Data é obrigatório"),
+  subject: yup.string().required("Selecione um assunto"),
+  description: yup
+    .string()
+    .required("Descrição é obrigatório")
+    .min(10, "A  descrição deve ter pelo menos 10 caracteres"),
+});
 
 export default function App() {
   const { control, handleSubmit } = useForm<FormData>({
