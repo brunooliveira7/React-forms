@@ -11,17 +11,21 @@ type FormData = {
 };
 
 const schema = yup.object({
-  name: yup.string().required("Nome é obrigatório"),
-  date: yup.string().required("Data é obrigatório"),
-  subject: yup.string().required("Selecione um assunto"),
+  name: yup.string().required("Nome do evento é obrigatório."),
+  date: yup.string().required("Data é obrigatório."),
+  subject: yup.string().required("Selecione um assunto."),
   description: yup
     .string()
-    .required("Descrição é obrigatório")
-    .min(10, "A  descrição deve ter pelo menos 10 caracteres"),
+    .required("Descrição é obrigatório.")
+    .min(10, "A  descrição deve ter pelo menos 10 caracteres."),
 });
 
 export default function App() {
-  const { control, handleSubmit } = useForm<FormData>({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
     defaultValues: {
       name: "",
       date: "",
@@ -48,7 +52,9 @@ export default function App() {
           )}
         />
 
-        <span className="error">Nome é obrigatório</span>
+        {errors.name?.message && (
+          <span className="error">{errors.name.message}</span>
+        )}
 
         <Controller
           control={control}
@@ -57,6 +63,10 @@ export default function App() {
             <input type="date" placeholder="Nome do evento" {...field} />
           )}
         />
+
+        {errors.date?.message && (
+          <span className="error">{errors.date.message}</span>
+        )}
 
         <Controller
           control={control}
@@ -75,6 +85,10 @@ export default function App() {
           )}
         />
 
+        {errors.subject?.message && (
+          <span className="error">{errors.subject.message}</span>
+        )}
+
         <Controller
           control={control}
           name="description"
@@ -82,6 +96,10 @@ export default function App() {
             <textarea placeholder="Descrição" rows={4} {...field} />
           )}
         />
+
+        {errors.description?.message && (
+          <span className="error">{errors.description.message}</span>
+        )}
 
         <button type="submit">Salvar</button>
       </form>
