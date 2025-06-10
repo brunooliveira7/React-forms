@@ -24,13 +24,10 @@ Todos os campos possuem validação com mensagens de erro personalizadas exibida
 - Acessibilidade básica e UI moderna.
 
 🧪 Validações implementadas
-Nome do evento: obrigatório.
-
-Data: obrigatória.
-
-Assunto: obrigatório.
-
-Descrição: obrigatória, com mínimo de caracteres.
+- Nome do evento: obrigatório.
+- Data: obrigatória.
+- Assunto: obrigatório.
+- Descrição: obrigatória, com mínimo de caracteres.
 
 📄 Licença
 Este projeto está licenciado sob a licença MIT.
