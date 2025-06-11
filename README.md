@@ -2,6 +2,8 @@
 
 Um formulário simples e funcional para cadastro de eventos, desenvolvido com **React**, **TypeScript**, **Vite**, **react-hook-form** e **Yup**. O formulário permite ao usuário inserir o nome do evento, selecionar uma data, escolher um assunto e adicionar uma descrição — tudo com validação robusta e responsiva.
 
+---
+
 ## 🖼️ Interface
 
 A interface é composta pelos seguintes campos:
@@ -14,6 +16,8 @@ A interface é composta pelos seguintes campos:
 
 Todos os campos possuem validação com mensagens de erro personalizadas exibidas dinamicamente.
 
+---
+
 ## ✅ Funcionalidades
 
 - Integração com `react-hook-form` para gerenciamento eficiente do formulário.
@@ -23,11 +27,17 @@ Todos os campos possuem validação com mensagens de erro personalizadas exibida
 - Reset dos campos após o envio do formulário.
 - Acessibilidade básica e UI moderna.
 
-🧪 Validações implementadas
-- Nome do evento: obrigatório.
-- Data: obrigatória.
-- Assunto: obrigatório.
-- Descrição: obrigatória, com mínimo de caracteres.
+---
+
+<p align="center">
+  <img alt="">
+</p>
+
+<p align="center">
+  <img alt="">
+</p>
+
+---
 
 📄 Licença
 Este projeto está licenciado sob a licença MIT.
